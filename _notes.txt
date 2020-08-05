@@ -1,0 +1,92 @@
+/*******************************************************************************
+*
+* Materiais de referência
+*
+*******************************************************************************/
+a) Ng-Bootstrap, para Angular
+> https://ng-bootstrap.github.io/#/home
+
+b) Documentação do Angular/CLI
+> https://angular.io/
+
+c) Documentação de packages via NPM
+https://www.npmjs.com
+https://www.npmjs.com/package/json-server
+
+d) Documentação de validação de formulário
+> https://www.npmjs.com/package/ng-brazil
+
+e) Documentação de validação customizada de formulário
+> https://www.npmjs.com/package/ng-validation
+
+/*******************************************************************************
+*
+* Itens de instalação e ajustes no projeto
+*
+*******************************************************************************/
+
+1) [ X ] - Criar projeto, com aceite para criar o módulo de rotas e CSS padrão
+> ng new tennistool
+================================================================================
+2) [ X ] - No arquivo app.module.ts, incluir
+-> import { APP_BASE_HREF } from '@angular/common';
+-> providers: [
+    // Define a base de HREF, apesar da rota estar direcionando
+    // Após '/', poderia incluir um prefixo, ex: /admin, /teste, etc
+    { provide: APP_BASE_HREF, useValue: '/'}
+  ],
+
+================================================================================
+3 [ X ] - Install Localize, requisitado para este versão da 9 em diante,
+pré-requisito também para usar bootstrap e ng-bootstrap
+> npm i @angular/localize
+após instalaçao, abrir o arquivo polyfills.ts e inserir este import abaixo
+-> import '@angular/localize/init';
+
+================================================================================
+3) [ X ] - Instalar o bootstrap para uso somente do CSS
+> npm install bootstrap (OK)
+Após instalação, abrir a pasta style.css, e adicionar
+-> @import "~bootstrap/dist/css/bootstrap.min.css";
+
+================================================================================
+4) [ X ] - Instalar o ng-bootstrap, para uso dos componentes bootstrap integrados
+com o Angular, não utilizando o JS do boostrap, mas sim, do próprio Angular.
+> ng add @ng-bootstrap/ng-bootstrap
+Após instalação, Importar ou verificar o módulo NgbModule no app.module.ts
+-> import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
+Nota: Utilizar esta importação em todos os componentes que irão utilizar interação com Angular.
+
+================================================================================
+5) [ X ] - Instalar Validação customizadas de formulário
+-> npm i ngx-custom-validators
+
+================================================================================
+6) [ X ] - Instalar Validação de formulário, critérios
+Instalar o ng-Brazil, somente critérios do Brasil, validação e máscara de formulários
+> npm i ng-brazil js-brasil
+Após instalação, inserir no arquivo app.module.ts
+-> import { NgBrazil } from 'ng-brazil'
+
+================================================================================
+7) [ X ] - Instalar mask, mascáras de dados
+> npm i -s angular2-text-mask text-mask-addons
+Após instalação, inserir no arquivo app.module.ts
+-> import { TextMask } from 'ng-brazil'
+-> imports: [NgBrazil]
+Também no arquivo app.module.ts, acrescentar o import abaixo
+-> imports: [TextMask.TextMaskModule]
+
+================================================================================
+8) [ X ] - Validação customizada de formulário
+> npm i ng2-validation --save
+
+
+================================================================================
+99) [ X ] - Compilação com Yvi
+Ajustes devem ser feitos no arquivo tsconfig.js
+1) Incluir  "enableIvy": true, na sessão "angularCompilerOptions"
+2) No arquivo angular.json alterar aot => true
+
+> ng b --prod
+

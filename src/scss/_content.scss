@@ -1,0 +1,50 @@
+.content {
+    color: var(--dark);
+    background: var(--white);
+    padding: 24px;
+    font-family: "Open Sans", sans-serif;
+
+    h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    h2,
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--brand);
+    }
+
+    h3 {
+        font-weight: 400;
+    }
+
+    ol,
+    ul {
+        margin-bottom: 24px;
+    }
+
+    p,
+    li {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    li {
+        margin-bottom: 6px;
+    }
+
+    p {
+        margin-bottom: 24px;
+    }
+
+    .date {
+        font-family: "Montserrat", sans-serif;
+    }
+    @media (min-width: 992px) {
+        padding: 40px;
+    }
+}

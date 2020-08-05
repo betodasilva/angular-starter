@@ -1,0 +1,29 @@
+.page {
+    padding: 25px;
+    margin: 25px auto;
+    width: 95%;
+    // max-width: 90%;
+    background: var(--white);
+    font-family: "Open Sans", sans-serif;
+    color: var(--dark);
+
+    &-title {
+        font-size: 32px;
+        font-weight: 700;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid rgba($color: #2d5455, $alpha: 0.2);
+        color: var(--brand);
+    }
+
+    @media (min-width: 992px) {
+        padding: 50px;
+        max-width: 1330px;
+
+        &-title {
+            font-size: 36px;
+            padding-bottom: 32px;
+            margin-bottom: 36px;
+        }
+    }
+}

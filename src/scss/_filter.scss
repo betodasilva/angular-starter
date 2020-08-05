@@ -1,0 +1,50 @@
+.sidebar-filter {
+    display: flex;
+    flex-wrap: wrap;
+    // margin-bottom: 24px;
+    font-family: "Open Sans", sans-serif;
+
+    &.has-4-col > button {
+        flex: 1 1 calc(25% - 3px);
+        &:not(:nth-child(4n)) {
+            margin-right: 2px;
+        }
+    }
+
+    button {
+        background: none;
+        flex: 1 1 calc(33% - 3px);
+        max-width: calc(33% - 3px);
+
+        font-size: 14px;
+        color: var(--dark);
+        height: 42px;
+        line-height: 1;
+        padding: 0;
+        border: 1px solid var(--grey);
+        transition: all 420ms ease;
+        margin-bottom: 4px;
+        &:not(:nth-child(3n)) {
+            margin-right: 4px;
+        }
+
+        &,
+        &:focus {
+            outline: none;
+        }
+
+        &.active {
+            background: var(--brand);
+            color: var(--white);
+            border-color: var(--brand);
+        }
+    }
+
+    @media (max-width: 992px) {
+        button {
+            font-size: 12px;
+            flex: 1 1 auto;
+            margin-right: 0 !important;
+        }
+    }
+}
